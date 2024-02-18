@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@voids-theone/weather-model": ["libs/weather-model/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

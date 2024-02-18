@@ -1,0 +1,19 @@
+{
+  "name": "weather-model",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/weather-model/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/weather-model",
+        "main": "libs/weather-model/src/index.ts",
+        "tsConfig": "libs/weather-model/tsconfig.lib.json",
+        "assets": ["libs/weather-model/*.md"]
+      }
+    }
+  },
+  "tags": []
+}
