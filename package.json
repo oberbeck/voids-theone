@@ -11,10 +11,12 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@nestjs/schematics": "^10.0.1",
     "@nx/eslint": "18.0.4",
     "@nx/eslint-plugin": "18.0.4",
     "@nx/jest": "18.0.4",
     "@nx/js": "18.0.4",
+    "@nx/nest": "18.0.4",
     "@nx/next": "18.0.4",
     "@swc-node/register": "~1.8.0",
     "@swc/core": "~1.3.85",
