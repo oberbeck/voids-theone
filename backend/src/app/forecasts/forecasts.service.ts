@@ -7,28 +7,12 @@ import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
 export class ForecastsService {
-  constructor(
-    @InjectRepository(Forecast)
-    private readonly forecastsRepository: Repository<Forecast>
-  ) {}
+  constructor(private readonly entityManager: EntityManager) {}
 
-  // create(createForecastDto: CreateForecastDto) {
-  //   throw new Error('Method not yet implemented.');
-  // }
-
-  findAll() {
-    return this.forecastsRepository.find();
+  findByDate(date: Date | string) {
+    return this.entityManager.query(
+      `SELECT * FROM oneglass.forecasts WHERE date = $1`,
+      [date]
+    );
   }
-
-  // findOne(id: number) {
-  //   throw new Error('Method not yet implemented.');
-  // }
-
-  // update(id: number, updateForecastDto: UpdateForecastDto) {
-  //   throw new Error('Method not yet implemented.');
-  // }
-
-  // remove(id: number) {
-  //   throw new Error('Method not yet implemented.');
-  // }
 }
