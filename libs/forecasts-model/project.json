@@ -1,0 +1,19 @@
+{
+  "name": "forecasts-model",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/forecasts-model/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/forecasts-model",
+        "main": "libs/forecasts-model/src/index.ts",
+        "tsConfig": "libs/forecasts-model/tsconfig.lib.json",
+        "assets": ["libs/forecasts-model/*.md"]
+      }
+    }
+  },
+  "tags": []
+}

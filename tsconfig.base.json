@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@voids-theone/forecasts-model": ["libs/forecasts-model/src/index.ts"],
       "@voids-theone/weather-model": ["libs/weather-model/src/index.ts"]
     }
   },

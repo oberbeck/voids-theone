@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Header from '../../components/header';
 import Scaffold from '../../components/scaffold';
 
@@ -14,7 +15,7 @@ export default async function Details({
         <div className="text-sm breadcrumbs">
           <ul>
             <li>
-              <a>details</a>
+              <Link href="/procurement">Procurement</Link>
             </li>
             <li>
               <span className="inline-flex gap-2 items-center">
