@@ -1,4 +1,4 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get, Req, Param, Query } from '@nestjs/common';
 import { WeatherService } from './weather.service';
 import { map } from 'rxjs/operators';
 import { HttpException, HttpStatus } from '@nestjs/common';
@@ -7,11 +7,13 @@ import { HttpException, HttpStatus } from '@nestjs/common';
 export class WeatherController {
   constructor(private readonly weatherService: WeatherService) {}
 
-  @Get()
-  getWeather(@Query('location') location: string, @Query('date') date: string) {
+  @Get(':location')
+  getWeather(@Param('location') location: string, @Query('date') date: string) {
+    // TODO review - for some reason `location`+`date` are always underfined
+
     if (!location) {
       throw new HttpException(
-        'Location must be provided',
+        'Location must be provided' + location,
         HttpStatus.BAD_REQUEST
       );
     }

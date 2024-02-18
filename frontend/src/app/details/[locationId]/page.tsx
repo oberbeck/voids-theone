@@ -1,12 +1,15 @@
 import Link from 'next/link';
 import Header from '../../components/header';
 import Scaffold from '../../components/scaffold';
+import { get as getWeather } from 'frontend/src/repositories/weather';
 
 export default async function Details({
   params,
 }: {
   params: { locationId: string };
 }) {
+  const weather = await getWeather(params.locationId, new Date()); // TODO make date dynamic
+
   return (
     <>
       <Header />
@@ -25,7 +28,9 @@ export default async function Details({
           </ul>
         </div>
 
-        <span>details: {params.locationId}</span>
+        <div>details: {params.locationId}</div>
+        <div>temperature: {weather.temp}</div>
+        <div>uvindex: {weather.uvindex}</div>
       </Scaffold>
     </>
   );
