@@ -3,9 +3,11 @@ import { ForecastsService } from './forecasts.service';
 import { ForecastsController } from './forecasts.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { environment } from 'backend/src/environments/environment';
+import { Forecast } from './entities/forecast.entity';
 
 @Module({
   imports: [
+    TypeOrmModule.forFeature([Forecast]),
     TypeOrmModule.forRootAsync({
       useFactory: () => ({
         // TODO environment config

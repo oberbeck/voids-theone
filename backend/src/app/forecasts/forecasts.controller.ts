@@ -7,28 +7,28 @@ import { UpdateForecastDto } from './dto/update-forecast.dto';
 export class ForecastsController {
   constructor(private readonly forecastsService: ForecastsService) {}
 
-  @Post()
-  create(@Body() createForecastDto: CreateForecastDto) {
-    return this.forecastsService.create(createForecastDto);
-  }
+  // @Post()
+  // create(@Body() createForecastDto: CreateForecastDto) {
+  //   return this.forecastsService.create(createForecastDto);
+  // }
 
   @Get()
   findAll() {
     return this.forecastsService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.forecastsService.findOne(+id);
-  }
+  // @Get(':id')
+  // findOne(@Param('id') id: string) {
+  //   return this.forecastsService.findOne(+id);
+  // }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateForecastDto: UpdateForecastDto) {
-    return this.forecastsService.update(+id, updateForecastDto);
-  }
+  // @Patch(':id')
+  // update(@Param('id') id: string, @Body() updateForecastDto: UpdateForecastDto) {
+  //   return this.forecastsService.update(+id, updateForecastDto);
+  // }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.forecastsService.remove(+id);
-  }
+  // @Delete(':id')
+  // remove(@Param('id') id: string) {
+  //   return this.forecastsService.remove(+id);
+  // }
 }
