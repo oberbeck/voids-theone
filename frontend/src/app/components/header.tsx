@@ -12,7 +12,7 @@ export default function Header({
       <div className="flex-none flex gap-2">
         {showHomeButton !== false && (
           <Link href="/" className="btn">
-            back
+            home
           </Link>
         )}
       </div>
